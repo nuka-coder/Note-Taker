@@ -1,0 +1,32 @@
+body {
+  text-align: center;
+  font-family: Oswald, sans-sans-serif;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.labels {
+  font-size: 1.5rem;
+  padding: 0 20px;
+}
+
+/*Styling for div created in Javascript*/
+.notesList {
+  border: 1px solid black;
+  margin: 10px 0;
+  padding: 20px;
+  text-align: left;
+}
+/*Styling for deleteBtn created in Javascript*/
+.delete-btn {
+float: right;
+top: 0;
+}
+/*Styling for noteText*/
+.noteText {
+  display: inline-block;
+  width: 80%;
+}
