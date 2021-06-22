@@ -45,11 +45,37 @@ var modalText = document.createElement("P");
 modalText.innerHTML = noteInput.value;
 modal.appendChild(modalText);
 modal.setAttribute("class", "modal");
+allNotes.appendChild(modal);
+
+//DELETE MODAL
+var deleteModal = document.createElement("BUTTON");
+//set innerHTML for deleteModal
+deleteModal.innerHTML = "CLOSE";
+//append deleteBtn to modal
+modal.appendChild(deleteModal);
+//assign class to deleteBtn
+deleteModal.setAttribute("class", "close-modal");
+//addEventListener to deleteBtn
+deleteModal.addEventListener("click", function() {
+  modal.style.display="none";
+  deleteModal.style.display="none";
+})
+//CLOSE MODAL ON WINDOW CLICK
+  window.onclick = function(event) {
+    if (event.target != modalBtn) {
+  modal.style.display="none";
+  }
+  else {
+    modal.style.display="block";
+    deleteModal.style.display="block";
+  }
+  }
+
 
 //CLICK FOR MODAL BUTTON
 modalBtn.onclick = function() {
-  modal.style.display="block";
-}
+  modal.style.visibility="visible";
+};
 
 //CREATE DELETE BUTTON
 var deleteBtn = document.createElement("BUTTON");
