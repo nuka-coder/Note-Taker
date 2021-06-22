@@ -16,7 +16,7 @@ function noteSubmit() {
 //create div element to hold new note submissions
 var noteHolder = document.createElement("DIV");
 //assign class to noteHolder
-noteHolder.setAttribute("class", "notesList");
+noteHolder.setAttribute("class", "note-holder");
 //create p element to hold note value
 var noteText = document.createElement("P");
 //set attribute for noteText
@@ -28,7 +28,30 @@ noteHolder.appendChild(noteText);
 //append the above the allNotes div in html
 allNotes.appendChild(noteHolder);
 
-//create delete button
+
+//MODAL BUTTON
+//create button element
+var modalBtn = document.createElement("BUTTON");
+//set innerHTML of modal
+modalBtn.innerHTML="View Detail";
+//assign class to modal
+modalBtn.setAttribute("class", "modalBtn");
+//append modal to noteHolder
+noteHolder.appendChild(modalBtn);
+
+//CREATE MODAL
+var modal = document.createElement("DIV");
+var modalText = document.createElement("P");
+modalText.innerHTML = noteInput.value;
+modal.appendChild(modalText);
+modal.setAttribute("class", "modal");
+
+//CLICK FOR MODAL BUTTON
+modalBtn.onclick = function() {
+  modal.style.display="block";
+}
+
+//CREATE DELETE BUTTON
 var deleteBtn = document.createElement("BUTTON");
 //set innerHTML for deleteBtn
 deleteBtn.innerHTML = "X";
@@ -45,9 +68,6 @@ deleteBtn.addEventListener("click", function() {
 //clear textarea
 noteInput.value = "";
 
-
-
+//prevent page refresh
 event.preventDefault();
 }
-
-var detailsBtn = document.createElement("BUTTON");
